@@ -1,0 +1,6 @@
+function safe = is_safe(puzzle, row, col, num)
+    % 检查在指定位置填充数字是否安全
+    safe = ~used_in_row(puzzle, row, num) && ...
+           ~used_in_col(puzzle, col, num) && ...
+           ~used_in_box(puzzle, row - mod(row-1,3), col - mod(col-1,3), num);
+end
